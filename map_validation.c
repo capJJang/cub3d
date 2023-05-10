@@ -6,21 +6,20 @@
 /*   By: segan <segan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 18:33:58 by segan             #+#    #+#             */
-/*   Updated: 2023/05/09 18:48:00 by segan            ###   ########.fr       */
+/*   Updated: 2023/05/10 20:59:04 by segan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	map_validation(char *argv, char ***map)
+t_map	*map_validation(char *argv)
 {
-	int	fd;
+	int		fd;
+	t_map	*map;
+	char	**file;
 
-	fd = open(argv, O_RDONLY);
-	if (fd < -1)
-	{
-		ft_putendl_fd(strerror(errno), 2);
-		exit(1);
-	}
-	//*map =
+	fd = ft_open(argv);
+	map = (t_map *)ft_malloc(sizeof(map));
+	file = read_map(fd);
+	return (map);
 }

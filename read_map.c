@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: segan <segan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 17:52:42 by segan             #+#    #+#             */
-/*   Updated: 2023/05/10 20:56:54 by segan            ###   ########.fr       */
+/*   Created: 2023/05/10 18:05:35 by segan             #+#    #+#             */
+/*   Updated: 2023/05/10 20:55:02 by segan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	main(int argc, char *argv[])
+char	**read_map(int fd)
 {
-	t_map	*map;
+	char	*map;
+	char	*temp;
 
-	if (argc != 2)
-		return (print_error(INVALID_ARG));
-	map = map_validation(argv[1]);
-
+	map = NULL;
+	while (1)
+	{
+		temp = get_next_line(fd);
+		if (temp == NULL)
+			break ;
+		if (*temp == '\n')
+		{
+			free(temp);
+			continue ;
+		}
+		map = ft_strjoin2(map, temp, 1, 1);
+	}
+	return (ft_split(map, '\n'));
 }
