@@ -6,7 +6,7 @@
 /*   By: segan <segan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 17:37:37 by segan             #+#    #+#             */
-/*   Updated: 2023/05/10 21:10:31 by segan            ###   ########.fr       */
+/*   Updated: 2023/05/11 15:48:23 by segan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_open(const char *file)
 	fd = open(file, O_RDONLY);
 	if (fd < -1)
 	{
-		ft_putendl_fd(strerror(errno), 2);
+		ft_putendl_fd(strerror(errno), STDERR_FILENO);
 		exit(1);
 	}
 	return (fd);
@@ -70,7 +70,7 @@ void	*ft_malloc(long size)
 	ret = malloc(size);
 	if (ret == NULL)
 	{
-		ft_putendl_fd(strerror(errno), 2);
+		ft_putendl_fd(strerror(errno), STDERR_FILENO);
 		exit(1);
 	}
 	return (ret);

@@ -1,64 +1,62 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: segan <segan@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 17:49:29 by segan             #+#    #+#             */
-/*   Updated: 2023/05/10 21:21:05 by segan            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include <unistd.h>
-# include <fcntl.h>
 # include <stdio.h>
-# include <string.h>
-# include <errno.h>
-# include "get_next_line.h"
+# include <unistd.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# include <math.h>
+# include "/usr/local/include/mlx.h"
 
-# define INVALID_ARG 1
-# define INVALID_FILE 2
+# define _USE_MATH_DEFINES
 
+# define E_ARG "error: argument"
+# define E_FILE "error: file"
 
-typedef struct s_map
-{
-	char	**map;
-	void	*no;
-	void	*so;
-	void	*we;
-	void	*ea;
-	char	f[10];
-	char	c[10];
-}				t_map;
+# define SCREEN_WIDTH 1280
+# define SCREEN_HEIGHT 720
+// # define SCREEN_WIDTH 640
+// # define SCREEN_HEIGHT 360
 
+# define FOV_H 60
+# define RAY_CNT 1280
 
-//util func start
-void	ft_putendl_fd(char *s, int fd);
-size_t	ft_strlen(const char *s);
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
-int		ft_isspace(int c);
-void	*ft_malloc(long size);
-char	*get_next_line(int fd);
-//util end
+# define MAP_WIDTH 24
+# define MAP_HEIGHT 24
+# define MINIMAP_TILE 30
+# define CHARACTER_SIZE 4
 
-//error funcs start
-int		print_error(int err);
-char	*get_err(int err);
-//error funcs end
+# define XPM_ROW 96
+# define XPM_COL 96
 
+# define KEY_ESC 53
 
-char	*ft_strjoin2(char *s1, char *s2, int s1_free, int s2_free);
-int		ft_open(const char *file);
-void	ft_bzero(void *s, size_t n);
-char	**ft_split(char const *s, char c);
+# define KEY_W 13
+# define KEY_A 0
+# define KEY_S 1
+# define KEY_D 2
+# define KEY_M 46
 
+# define KEY_LEFT 123
+# define KEY_RIGHT 124
+# define KEY_DOWN 125
+# define KEY_UP 126
 
-t_map	*map_validation(char *argv);
-char	**read_map(int fd);
-char	*get_next_line(int fd);
+typedef struct s_win {
+	void	*mlx_ptr;
+	void	*win_ptr;
+	void	*img;
+	char	*addr;
+	char	*dst;
+	int		width;
+	int		height;
+}	t_win;
+
+typedef struct s_player {
+	double	x;
+	double	y;
+	double	speed;
+	double	angle;
+}	t_player;
 
 #endif
