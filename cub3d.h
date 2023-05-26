@@ -6,7 +6,7 @@
 /*   By: segan <segan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 17:49:29 by segan             #+#    #+#             */
-/*   Updated: 2023/05/10 21:21:05 by segan            ###   ########.fr       */
+/*   Updated: 2023/05/26 16:28:49 by segan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 # include <stdio.h>
 # include <string.h>
 # include <errno.h>
-# include "get_next_line.h"
+# include <stdlib.h>
+# include <mlx.h>
 
 # define INVALID_ARG 1
 # define INVALID_FILE 2
@@ -27,12 +28,12 @@
 typedef struct s_map
 {
 	char	**map;
-	void	*no;
-	void	*so;
-	void	*we;
-	void	*ea;
-	char	f[10];
-	char	c[10];
+	char	*no;
+	char	*so;
+	char	*we;
+	char	*ea;
+	char	f[8];
+	char	s[8];
 }				t_map;
 
 
@@ -43,6 +44,11 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_isspace(int c);
 void	*ft_malloc(long size);
 char	*get_next_line(int fd);
+char	*ft_strdup(const char *s1);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_atoi(const char *str);
+char	*ft_strchr(const char *s, int o);
+char	*ft_strrchr(const char *s, int o);
 //util end
 
 //error funcs start

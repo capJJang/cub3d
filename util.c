@@ -6,7 +6,7 @@
 /*   By: segan <segan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 17:37:37 by segan             #+#    #+#             */
-/*   Updated: 2023/05/10 21:10:31 by segan            ###   ########.fr       */
+/*   Updated: 2023/05/26 15:26:17 by segan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_open(const char *file)
 
 	if (ft_strnstr(file, ".cub", ft_strlen(file)) == NULL)
 	{
-		print_error(INVALID_FILE);
+		//print_error(INVALID_FILE);
 		exit(1);
 	}
 	fd = open(file, O_RDONLY);

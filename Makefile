@@ -6,7 +6,7 @@
 #    By: segan <segan@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/09 17:52:39 by segan             #+#    #+#              #
-#    Updated: 2023/05/10 21:21:53 by segan            ###   ########.fr        #
+#    Updated: 2023/05/26 15:26:00 by segan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,7 @@ LIBFLAGS = -L /usr/Local/lib/ -L ./libft -l ft
 
 DEBUG = -g -fsanitize=address
 
-SRCS = main.c errors.c map_validation.c util.c read_map.c\
-		get_next_line.c get_next_line_utils.c
+SRCS = main.c map_validation.c util.c read_map.c\
 
 OBJS = $(SRCS:.c=.o)
 

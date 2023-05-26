@@ -29,6 +29,8 @@ int	ft_strncmp2(const char *s1, const char *s2, size_t n)
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
+	if (haystack == NULL)
+		return (NULL);
 	if (!*needle)
 		return ((char *)haystack);
 	while (*haystack && (len >= ft_strlen(needle)))
