@@ -6,7 +6,7 @@
 /*   By: segan <segan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 23:45:15 by segan             #+#    #+#             */
-/*   Updated: 2023/05/26 15:27:49 by segan            ###   ########.fr       */
+/*   Updated: 2023/05/29 15:40:04 by segan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,26 @@
 //	return (i);
 //}
 
-char	*ft_strchr(const char *s, int o)
-{
-	size_t	i;
-	size_t	len;
+//char	*ft_strchr(const char *s, int o)
+//{
+//	size_t	i;
+//	size_t	len;
 
-	i = 0;
-	if (o == 0)
-		return ((char *)s + ft_strlen(s));
-	if (s == NULL)
-		return (NULL);
-	len = ft_strlen(s);
-	while (i < len)
-	{
-		if (s[i] == (char)o)
-			return ((char *)(s + i));
-		else
-			i++;
-	}
-	return ((void *) 0);
-}
+//	i = 0;
+//	if (o == 0)
+//		return ((char *)s + ft_strlen(s));
+//	if (s == NULL)
+//		return (NULL);
+//	len = ft_strlen(s);
+//	while (i < len)
+//	{
+//		if (s[i] == (char)o)
+//			return ((char *)(s + i));
+//		else
+//			i++;
+//	}
+//	return ((void *) 0);
+//}
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

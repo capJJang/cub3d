@@ -6,7 +6,7 @@
 /*   By: segan <segan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 17:49:29 by segan             #+#    #+#             */
-/*   Updated: 2023/05/26 16:28:49 by segan            ###   ########.fr       */
+/*   Updated: 2023/05/29 18:20:04 by segan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,11 @@ typedef struct s_map
 	char	*so;
 	char	*we;
 	char	*ea;
-	char	f[8];
-	char	s[8];
+	float	x;
+	float	y;
+	char	facing;
+	int		f;
+	int		c;
 }				t_map;
 
 
@@ -47,8 +50,12 @@ char	*get_next_line(int fd);
 char	*ft_strdup(const char *s1);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *str);
+int		ft_isdigit(int c);
 char	*ft_strchr(const char *s, int o);
 char	*ft_strrchr(const char *s, int o);
+void	*ft_memset(void *b, int c, size_t len);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+char	*ft_strtrim(char const *s1, char const *set);
 //util end
 
 //error funcs start

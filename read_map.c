@@ -6,7 +6,7 @@
 /*   By: segan <segan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 18:05:35 by segan             #+#    #+#             */
-/*   Updated: 2023/05/10 20:55:02 by segan            ###   ########.fr       */
+/*   Updated: 2023/05/29 16:08:48 by segan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	**read_map(int fd)
 			free(temp);
 			continue ;
 		}
-		map = ft_strjoin2(map, temp, 1, 1);
+		map = ft_strjoin2(map, temp, 0, 0);
 	}
 	return (ft_split(map, '\n'));
 }

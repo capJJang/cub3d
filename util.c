@@ -6,7 +6,7 @@
 /*   By: segan <segan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 17:37:37 by segan             #+#    #+#             */
-/*   Updated: 2023/05/26 15:26:17 by segan            ###   ########.fr       */
+/*   Updated: 2023/05/29 15:43:36 by segan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_open(const char *file)
 		exit(1);
 	}
 	fd = open(file, O_RDONLY);
-	if (fd < -1)
+	if (fd <= -1)
 	{
 		ft_putendl_fd(strerror(errno), 2);
 		exit(1);
